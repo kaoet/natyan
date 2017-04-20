@@ -1,0 +1,24 @@
+syntax = "proto3";
+package natyan;
+option go_package="github.com/onetwogoo/natyan/proto;natyan";
+
+service Natyan {
+    rpc Accept(AcceptRequest) returns (AcceptResponse) {}
+    rpc Connect(ConnectRequest) returns (ConnectResponse) {}
+}
+
+message AcceptRequest {
+    int32 channel = 1;
+}
+
+message AcceptResponse {
+    int32 port = 1;
+}
+
+message ConnectRequest {
+    int32 channel = 1;
+}
+
+message ConnectResponse {
+    int32 port = 1;
+}
